@@ -16,6 +16,10 @@ import sev1 from "./assets/photos/sev1.jpg";
 import sev2 from "./assets/photos/sev2.jpg";
 import sev3 from "./assets/photos/sev3.jpg";
 import sev4 from "./assets/photos/sev4.jpg";
+import sev5 from "./assets/photos/sev5.jpg";
+import sev6 from "./assets/photos/sev6.jpg";
+import sev7 from "./assets/photos/sev7.jpg";
+import sev8 from "./assets/photos/sev8.jpg";
 import E1 from "./assets/photos/E1.jpg";
 import E2 from "./assets/photos/E2.jpg";
 import E3 from "./assets/photos/E3.jpg";
@@ -110,7 +114,7 @@ const lifeChapters = [
     title: "A caring daughter. A sister. A friend. A teacher. A human being.",
     description:
       "There is so much more to her than one role. She has spent years caring for people, showing up for them and making them feel loved in ways she may not even realise.",
-    photos: [sev1,sev,sev3,sev4,sev2],
+    photos: [sev1,sev,sev3,sev4,sev2,sev5,sev6,sev7,sev8],
   },
 
   {
