@@ -3,38 +3,201 @@ import { motion, AnimatePresence } from "framer-motion";
 import confetti from "canvas-confetti";
 import "./App.css";
 
-import memory1 from "./assets/photos/memory1.jpg";
-import memory2 from "./assets/photos/memory2.jpg";
-import memory3 from "./assets/photos/memory3.jpg";
-import memory4 from "./assets/photos/memory4.jpg";
-import memory5 from "./assets/photos/memory5.jpg";
-import memory6 from "./assets/photos/memory6.jpg";
+import two_1 from "./assets/photos/two_1.jpg";
+import two_2 from "./assets/photos/two_2.jpg";
+import two_3 from "./assets/photos/two_3.jpg";
+import two_4 from "./assets/photos/two_4.jpg";
+import five from "./assets/photos/five.jpg";
+import five1 from "./assets/photos/five1.jpg";
+import five2 from "./assets/photos/five2.jpg";
+import five3 from "./assets/photos/five3.jpg";
+import sev from "./assets/photos/sev.jpg";
+import sev1 from "./assets/photos/sev1.jpg";
+import sev2 from "./assets/photos/sev2.jpg";
+import sev3 from "./assets/photos/sev3.jpg";
+import sev4 from "./assets/photos/sev4.jpg";
+import E1 from "./assets/photos/E1.jpg";
+import E2 from "./assets/photos/E2.jpg";
+import E3 from "./assets/photos/E3.jpg";
+import E4 from "./assets/photos/E4.jpg";
+import E5 from "./assets/photos/E5.jpg";
+import E6 from "./assets/photos/E6.jpg";
+import child from "./assets/photos/child.jpg";
+import cousin1 from "./assets/photos/cousin1.jpg";
+import cousin2 from "./assets/photos/cousin2.jpg";
+import cousin3 from "./assets/photos/cousin3.jpg";
+import cousin4 from "./assets/photos/cousin4.jpg";
+import dostii from "./assets/photos/dostii.jpg";
+import dostii1 from "./assets/photos/dostii1.jpg";
+import dostii2 from "./assets/photos/dostii2.jpg";
+import off1 from "./assets/photos/off1.jpg";
+import off2 from "./assets/photos/off2.jpg";
+import off3 from "./assets/photos/off3.jpg";
+import off4 from "./assets/photos/off4.jpg";
+import off5 from "./assets/photos/off5.jpg";
+import last from "./assets/photos/last.jpg";
+
+
+/* =====================================================
+   PHOTO / STORY DATA
+===================================================== */
+
+const lifeChapters = [
+  {
+    id: 1,
+    chapter: "CHAPTER 01",
+    era: "THE LITTLE GIRL",
+    title: "Before she was Amma...",
+    description:
+      "Before she became the woman everyone knows today, she was someone's little girl — growing up, laughing, dreaming and creating memories of her own.",
+    photos: [child],
+  },
+
+  {
+    id: 2,
+    chapter: "CHAPTER 02",
+    era: "FAMILY",
+    title: "The daughter she has always been...",
+    description:
+      "Before becoming a mother herself, she was a daughter, a granddaughter, a sister and a part of a family that shaped the person she became.",
+    photos: [two_1, two_2, two_3],
+  },
+
+  {
+    id: 3,
+    chapter: "CHAPTER 03",
+    era: "COLLEGE DAYS",
+    title: "The girl with her gang...",
+    description:
+      "College wasn't just about classes. There were friendships, laughter, endless stories, little adventures and the version of her that knew exactly how to have fun.",
+    photos: [dostii2,dostii1,dostii],
+  },
+
+  {
+    id: 4,
+    chapter: "CHAPTER 04",
+    era: "COUSINS • MASTII",
+    title: "The fun side of her...",
+    description:
+      "Because Amma wasn't always Amma. Sometimes she was the loud one, the funny one, the mischievous one, the one laughing until her stomach hurt.",
+    photos: [cousin1, cousin2, cousin3],
+  },
+
+  {
+    id: 5,
+    chapter: "CHAPTER 05",
+    era: "MOTHERHOOD",
+    title: "And then... she became my Amma. ❤️",
+    description:
+      "Out of everything she has been in her life, this is the role I feel luckiest to have experienced from the closest place possible.",
+    photos: [five,five1,five2,five3],
+  },
+
+  {
+    id: 6,
+    chapter: "CHAPTER 06",
+    era: "HER WORK • HER PEOPLE • HER JOURNEY",
+    title: "The woman everyone at work knew and loved...",
+    description:
+      "She cared for everyone around her, and they cared for her too. Through friendships, celebrations and countless events, she never let age stop her from living every moment.",
+    photos: [off2,off3,off4],
+  },
+
+  {
+    id: 7,
+    chapter: "CHAPTER 07",
+    era: "THE WOMAN BEHIND EVERY ROLE",
+    title: "A caring daughter. A sister. A friend. A teacher. A human being.",
+    description:
+      "There is so much more to her than one role. She has spent years caring for people, showing up for them and making them feel loved in ways she may not even realise.",
+    photos: [sev1,sev,sev3,sev4,sev2],
+  },
+
+  {
+    id: 8,
+    chapter: "CHAPTER 08",
+    era: "MY AMMA",
+    title: "The woman I call home.",
+    description:
+      "A caring mother. A loving daughter. A teacher. A sister. A friend. A person who gives more than she asks for. And somehow, all of that is my Amma.",
+    photos: [E2, E5, E3, E1, E4, E6],
+  },
+];
+
+/* =====================================================
+   THINGS I NEVER SAY ENOUGH
+===================================================== */
+
+const messages = [
+  {
+    number: "01",
+    title: "Thank you.",
+    text:
+      "For all the little things you do that I sometimes forget to notice.",
+  },
+
+  {
+    number: "02",
+    title: "You are my safe place.",
+    text:
+      "No matter how old I grow, a part of me will always feel at home with you.",
+  },
+
+  {
+    number: "03",
+    title: "I am proud of you.",
+    text:
+      "Not just because you are my mother, but because of the person you are.",
+  },
+
+  {
+    number: "04",
+    title: "You have so many lives inside one life.",
+    text:
+      "You have been a daughter, sister, friend, teacher, wife and mother — and you have given something beautiful to every role.",
+  },
+
+  {
+    number: "05",
+    title: "And finally...",
+    text:
+      "I love you Amma. More than these little words could ever explain. ❤️",
+  },
+];
+
+/* =====================================================
+   APP
+===================================================== */
 
 function App() {
   const [stage, setStage] = useState("opening");
 
   useEffect(() => {
-  window.scrollTo({
-    top: 0,
-    behavior: "instant",
-  });
-}, [stage]);
+    window.scrollTo({
+      top: 0,
+      behavior: "instant",
+    });
+  }, [stage]);
+
+  const celebrate = () => {
+    confetti({
+      particleCount: 220,
+      spread: 130,
+      startVelocity: 40,
+      gravity: 0.8,
+      origin: {
+        x: 0.5,
+        y: 0.55,
+      },
+    });
+  };
 
   const openBirthday = () => {
     setStage("birthday");
 
     setTimeout(() => {
-      confetti({
-        particleCount: 240,
-        spread: 130,
-        startVelocity: 42,
-        gravity: 0.8,
-        origin: {
-          x: 0.5,
-          y: 0.58,
-        },
-      });
-    }, 700);
+      celebrate();
+    }, 500);
   };
 
   const openMemories = () => {
@@ -57,21 +220,13 @@ function App() {
     setStage("finale");
 
     setTimeout(() => {
-      confetti({
-        particleCount: 220,
-        spread: 140,
-        startVelocity: 38,
-        gravity: 0.75,
-        origin: {
-          x: 0.5,
-          y: 0.5,
-        },
-      });
-    }, 700);
+      celebrate();
+    }, 600);
   };
 
   return (
     <AnimatePresence mode="wait">
+
       {stage === "opening" && (
         <Opening
           key="opening"
@@ -117,190 +272,153 @@ function App() {
       {stage === "finale" && (
         <Finale key="finale" />
       )}
+
     </AnimatePresence>
   );
 }
 
-
 /* =====================================================
-   OPENING — THE MYSTERY
+   OPENING
+   FUNNY CHUBBY GIRL SURPRISE
 ===================================================== */
 
 function Opening({ onComplete }) {
   const [phase, setPhase] = useState(0);
-  const [doorOpening, setDoorOpening] = useState(false);
 
-  const enterQuietly = () => {
-    setPhase(1);
-  };
+  /* ---------------------------------------------
+     PHASE 0 → PHASE 1
+     Knock for exactly 3 seconds
+  --------------------------------------------- */
 
-  const knockOnDoor = () => {
-    setPhase(2);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setPhase(1);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  /* ---------------------------------------------
+     INTRO → FUNNY GIFT
+  --------------------------------------------- */
+
+  const startSurprise = () => {
+    setPhase(3);
 
     setTimeout(() => {
-      setPhase(3);
-    }, 6500);
+      setPhase(4);
+    }, 2500);
   };
 
-  const openDoor = () => {
-    setDoorOpening(true);
+  /* ---------------------------------------------
+     BIRTHDAY REVEAL
+  --------------------------------------------- */
+
+  const revealBirthday = () => {
+    setPhase(5);
 
     setTimeout(() => {
       onComplete();
-    }, 1500);
+    }, 3200);
   };
 
   return (
     <motion.section
-      className="opening-new"
+      className="opening-cute"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{
         opacity: 0,
-        scale: 1.08,
-        filter: "blur(8px)",
+        scale: 1.04,
       }}
-      transition={{ duration: 1 }}
+      transition={{ duration: 0.8 }}
     >
-      {/* =================================================
-          ATMOSPHERE
-      ================================================= */}
 
-      <motion.div
-        className="opening-glow"
-        animate={{
-          scale: [1, 1.12, 1],
-          opacity: [0.18, 0.32, 0.18],
-        }}
-        transition={{
-          duration: 5,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
+      <div className="cute-background">
 
-      <div className="opening-moon">
-        <motion.div
+        <motion.span
           animate={{
-            opacity: [0.65, 1, 0.65],
+            y: [0, -15, 0],
+            rotate: [0, 8, 0],
           }}
           transition={{
             duration: 4,
             repeat: Infinity,
           }}
-        />
-      </div>
+        >
+          🌸
+        </motion.span>
 
-      <div className="opening-particles">
-        <span>·</span>
-        <span>✦</span>
-        <span>·</span>
-        <span>✧</span>
-        <span>·</span>
-        <span>✦</span>
-        <span>·</span>
-        <span>✧</span>
-      </div>
-
-      <div className="opening-vignette" />
-
-
-      {/* =================================================
-          TOP DATE
-      ================================================= */}
-
-      <motion.div
-        className="opening-top"
-        initial={{
-          opacity: 0,
-          y: -10,
-        }}
-        animate={{
-          opacity: 0.5,
-          y: 0,
-        }}
-        transition={{
-          delay: 1,
-          duration: 1.5,
-        }}
-      >
-        OCTOBER 02
-      </motion.div>
-
-
-      {/* =================================================
-          MYSTERIOUS FIGURE
-      ================================================= */}
-
-      <motion.div
-        className="mystery-scene"
-        animate={{
-          opacity: phase >= 3 ? 0.25 : 1,
-        }}
-        transition={{
-          duration: 0.8,
-        }}
-      >
-        <motion.div
-          className="mystery-shadow"
-          animate={{
-            scale: [1, 1.03, 1],
-            opacity: [0.55, 0.75, 0.55],
-          }}
+        <motion.span
+          animate={{ y: [0, 12, 0] }}
           transition={{
             duration: 3,
             repeat: Infinity,
-            ease: "easeInOut",
           }}
-        />
+        >
+          ✨
+        </motion.span>
 
-        <motion.div
-          className="mystery-figure"
-          animate={{
-            y: [0, -5, 0],
-          }}
+        <motion.span
+          animate={{ y: [0, -10, 0] }}
           transition={{
             duration: 3.5,
             repeat: Infinity,
-            ease: "easeInOut",
           }}
         >
-          <div className="figure-hair" />
-          <div className="figure-head">
-            <span className="figure-eye left" />
-            <span className="figure-eye right" />
-          </div>
-          <div className="figure-body" />
-          <div className="figure-arm left" />
-          <div className="figure-arm right" />
-        </motion.div>
+          🎀
+        </motion.span>
 
-        <motion.div
-          className="figure-light"
-          animate={{
-            opacity: [0.08, 0.18, 0.08],
-            scale: [0.95, 1.05, 0.95],
-          }}
+        <motion.span
+          animate={{ y: [0, 14, 0] }}
           transition={{
             duration: 4,
             repeat: Infinity,
           }}
+        >
+          💗
+        </motion.span>
+
+        <motion.span
+          animate={{ y: [0, -12, 0] }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+          }}
         />
+
+      </div>
+
+      <motion.div
+        className="cute-date"
+        initial={{
+          opacity: 0,
+          y: -15,
+        }}
+        animate={{
+          opacity: 0.7,
+          y: 0,
+        }}
+        transition={{
+          delay: 0.5,
+        }}
+      >
+        OCTOBER 02 ❤️
       </motion.div>
 
-
-      {/* =================================================
-          PHASE 0 — SOMETHING IS WAITING
-      ================================================= */}
-
       <AnimatePresence mode="wait">
+
+        {/* =================================================
+            PHASE 0 — KNOCK KNOCK
+        ================================================= */}
+
         {phase === 0 && (
           <motion.div
-            key="phase-zero"
-            className="opening-content"
+            key="knock"
+            className="knock-scene"
             initial={{
               opacity: 0,
-              y: 25,
+              y: 30,
             }}
             animate={{
               opacity: 1,
@@ -308,130 +426,118 @@ function Opening({ onComplete }) {
             }}
             exit={{
               opacity: 0,
-              y: -20,
-              scale: 0.98,
+              scale: 0.95,
             }}
             transition={{
-              duration: 1.2,
+              duration: 0.8,
             }}
           >
-            <motion.span
-              className="opening-small"
-              initial={{
-                opacity: 0,
-                letterSpacing: "10px",
-              }}
+
+            <motion.div
+              className="knock-girl"
               animate={{
-                opacity: 0.65,
-                letterSpacing: "4px",
+                x: [0, 0, -7, 7, -7, 7, 0],
               }}
               transition={{
-                delay: 0.8,
-                duration: 1.8,
+                duration: 2.6,
+                delay: 0.4,
+                times: [
+                  0,
+                  0.35,
+                  0.45,
+                  0.55,
+                  0.65,
+                  0.75,
+                  1,
+                ],
+                ease: "easeInOut",
               }}
             >
-              SOMEWHERE IN THE DARK...
-            </motion.span>
+              <CuteGirl />
+            </motion.div>
 
-            <motion.h1
+            <motion.div
+              className="knock-bubble"
               initial={{
                 opacity: 0,
-                y: 25,
+                scale: 0.7,
               }}
               animate={{
                 opacity: 1,
-                y: 0,
+                scale: 1,
               }}
               transition={{
-                delay: 1.5,
-                duration: 1.1,
+                delay: 0.7,
+                type: "spring",
               }}
             >
-              Someone is
-              <br />
-              waiting for you.
-            </motion.h1>
+              <strong>
+                Knock knock... 🚪
+              </strong>
 
-            <motion.p
-              initial={{
-                opacity: 0,
-              }}
-              animate={{
-                opacity: 0.55,
-              }}
-              transition={{
-                delay: 2.4,
-                duration: 1,
-              }}
-            >
-              It's very quiet tonight...
-            </motion.p>
+              <span>
+                Ammaaaa... 👀
+              </span>
+            </motion.div>
 
-            <motion.button
-              className="opening-button"
-              initial={{
-                opacity: 0,
-                y: 15,
-              }}
+            <motion.div
+              className="knock-sound"
               animate={{
-                opacity: 1,
-                y: 0,
+                scale: [1, 1.12, 1],
+                opacity: [0.5, 1, 0.5],
               }}
               transition={{
-                delay: 3,
+                duration: 0.8,
+                repeat: 3,
               }}
-              whileHover={{
-                scale: 1.04,
-              }}
-              whileTap={{
-                scale: 0.95,
-              }}
-              onClick={enterQuietly}
             >
-              Enter quietly
-              <span>→</span>
-            </motion.button>
+              TAP TAP TAP! 😂
+            </motion.div>
+
           </motion.div>
         )}
 
-
         {/* =================================================
-            PHASE 1 — MUMMY?
+            PHASE 1 — HELLO
         ================================================= */}
 
         {phase === 1 && (
           <motion.div
-            key="phase-one"
-            className="opening-content"
+            key="waiting"
+            className="cute-scene"
             initial={{
               opacity: 0,
-              scale: 0.95,
+              y: 30,
             }}
             animate={{
               opacity: 1,
-              scale: 1,
+              y: 0,
             }}
             exit={{
               opacity: 0,
-            }}
-            transition={{
-              duration: 1,
+              scale: 0.9,
             }}
           >
-            <motion.span
-              className="opening-small"
-              animate={{
-                opacity: [0.35, 0.9, 0.35],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-              }}
-            >
-              WAIT...
-            </motion.span>
 
-            <motion.h1
+            <CuteGirl />
+
+            <div className="cute-speech">
+
+              <span>
+                HELLOOO? 👀
+              </span>
+
+              <p>
+                Amma...
+                <br />
+                Open the door! 😂
+              </p>
+
+            </div>
+
+            <motion.button
+              className="story-button cute-button"
+              onClick={() => setPhase(2)}
               initial={{
                 opacity: 0,
                 y: 20,
@@ -439,105 +545,54 @@ function Opening({ onComplete }) {
               animate={{
                 opacity: 1,
                 y: 0,
-              }}
-              transition={{
-                delay: 0.3,
-              }}
-            >
-              Mummy...?
-            </motion.h1>
-
-            <motion.p
-              initial={{
-                opacity: 0,
-              }}
-              animate={{
-                opacity: 0.7,
               }}
               transition={{
                 delay: 0.8,
               }}
-            >
-              Did you hear that?
-              <br />
-              I think someone's at the door...
-            </motion.p>
-
-            <motion.button
-              className="opening-button"
-              initial={{
-                opacity: 0,
-                y: 20,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                delay: 1.6,
-              }}
               whileHover={{
                 scale: 1.05,
+                y: -3,
               }}
               whileTap={{
                 scale: 0.95,
               }}
-              onClick={knockOnDoor}
             >
-              Let's check
+              Click here pleaseeeeeeee!!
               <span>→</span>
             </motion.button>
+
           </motion.div>
         )}
 
-
         {/* =================================================
-            PHASE 2 — KNOCK
+            PHASE 2 — ORIGINAL INTRO
         ================================================= */}
 
         {phase === 2 && (
           <motion.div
-            key="phase-two"
-            className="opening-content knock-content"
+            key="intro"
+            className="cute-scene"
             initial={{
               opacity: 0,
-              scale: 0.9,
+              y: 40,
             }}
             animate={{
               opacity: 1,
-              scale: 1,
+              y: 0,
+            }}
+            exit={{
+              opacity: 0,
+              scale: 0.9,
             }}
             transition={{
-              duration: 0.7,
+              duration: 0.9,
             }}
           >
+
+            <CuteGirl />
+
             <motion.div
-              className="knock-symbol"
-              animate={{
-                scale: [1, 1.2, 1],
-                rotate: [-3, 3, -3, 0],
-              }}
-              transition={{
-                duration: 0.55,
-                repeat: 2,
-              }}
-            >
-              ✊
-            </motion.div>
-
-            <motion.span
-              className="opening-small"
-              initial={{
-                opacity: 0,
-              }}
-              animate={{
-                opacity: 0.75,
-              }}
-            >
-              KNOCK...
-            </motion.span>
-
-            <motion.h1
+              className="cute-speech"
               initial={{
                 opacity: 0,
                 scale: 0.8,
@@ -547,104 +602,26 @@ function Opening({ onComplete }) {
                 scale: 1,
               }}
               transition={{
-                delay: 0.2,
+                delay: 0.5,
                 type: "spring",
               }}
             >
-              Knock.
-              <br />
-              Knock.
-            </motion.h1>
 
-            <motion.p
-              initial={{
-                opacity: 0,
-              }}
-              animate={{
-                opacity: 0.6,
-              }}
-              transition={{
-                delay: 0.7,
-              }}
-            >
-              Someone has a surprise for you...
-            </motion.p>
-          </motion.div>
-        )}
+              <span>
+                Shhh... 🤫
+              </span>
 
+              <p>
+                Oyeeeeeeeeeeeeee... Amma!
+                <br />
+                I have a little surprise for you...
+              </p>
 
-        {/* =================================================
-            PHASE 3 — OPEN THE DOOR
-        ================================================= */}
-
-        {phase === 3 && (
-          <motion.div
-            key="phase-three"
-            className="opening-content"
-            initial={{
-              opacity: 0,
-              y: 30,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 1,
-            }}
-          >
-            <motion.span
-              className="opening-small"
-              initial={{
-                opacity: 0,
-                letterSpacing: "8px",
-              }}
-              animate={{
-                opacity: 0.7,
-                letterSpacing: "4px",
-              }}
-              transition={{
-                duration: 1,
-              }}
-            >
-              OKAY...
-            </motion.span>
-
-            <motion.h1
-              initial={{
-                opacity: 0,
-                scale: 0.9,
-              }}
-              animate={{
-                opacity: 1,
-                scale: 1,
-              }}
-              transition={{
-                delay: 0.3,
-                duration: 0.9,
-              }}
-            >
-              Open the door.
-            </motion.h1>
-
-            <motion.p
-              initial={{
-                opacity: 0,
-              }}
-              animate={{
-                opacity: 0.7,
-              }}
-              transition={{
-                delay: 0.9,
-              }}
-            >
-              There's something beautiful
-              <br />
-              waiting on the other side.
-            </motion.p>
+            </motion.div>
 
             <motion.button
-              className="opening-button door-button"
+              className="story-button cute-button"
+              onClick={startSurprise}
               initial={{
                 opacity: 0,
                 y: 20,
@@ -654,56 +631,31 @@ function Opening({ onComplete }) {
                 y: 0,
               }}
               transition={{
-                delay: 1.5,
+                delay: 1,
               }}
               whileHover={{
-                scale: 1.06,
+                scale: 1.05,
+                y: -3,
               }}
               whileTap={{
-                scale: 0.94,
+                scale: 0.95,
               }}
-              onClick={openDoor}
             >
-              Open the door
-              <span>✦</span>
+              What surprise? 👀
+              <span>→</span>
             </motion.button>
+
           </motion.div>
         )}
-      </AnimatePresence>
 
+        {/* =================================================
+            PHASE 3 — FUNNY GIFT
+        ================================================= */}
 
-      {/* =================================================
-          TAP HINT
-      ================================================= */}
-
-      {phase < 3 && (
-        <motion.div
-          className="opening-hint"
-          initial={{
-            opacity: 0,
-          }}
-          animate={{
-            opacity: [0.25, 0.7, 0.25],
-          }}
-          transition={{
-            delay: 3,
-            duration: 2.5,
-            repeat: Infinity,
-          }}
-        >
-          {phase === 0 ? "A LITTLE SURPRISE AWAITS" : "FOLLOW THE SOUND..."}
-        </motion.div>
-      )}
-
-
-      {/* =================================================
-          DOOR OPENING TRANSITION
-      ================================================= */}
-
-      <AnimatePresence>
-        {doorOpening && (
+        {phase === 3 && (
           <motion.div
-            className="door-transition"
+            key="funny"
+            className="cute-scene"
             initial={{
               opacity: 0,
             }}
@@ -714,24 +666,175 @@ function Opening({ onComplete }) {
               opacity: 0,
             }}
           >
-            <motion.div
-              className="door-light"
-              initial={{
-                scale: 0,
-                opacity: 0,
-              }}
-              animate={{
-                scale: 3,
-                opacity: 1,
-              }}
-              transition={{
-                duration: 1.5,
-                ease: "easeOut",
-              }}
-            />
+
+            <CuteGirl carryingGift />
 
             <motion.div
-              className="door-message"
+              className="cute-speech"
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+            >
+
+              <span>
+                Ayyooooo devreee... 😅
+              </span>
+
+              <p>
+                I came running to wish you...
+                <br />
+                but this gift is HEAVY! 😂
+              </p>
+
+            </motion.div>
+
+          </motion.div>
+        )}
+
+        {/* =================================================
+            PHASE 4 — WAIT / TELL ME
+        ================================================= */}
+
+        {phase === 4 && (
+          <motion.div
+            key="secret"
+            className="cute-scene"
+            initial={{
+              opacity: 0,
+              scale: 0.9,
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+            }}
+            exit={{
+              opacity: 0,
+            }}
+          >
+
+            <CuteGirl happy />
+
+            <motion.div
+              className="cute-speech"
+              initial={{
+                opacity: 0,
+                scale: 0.8,
+              }}
+              animate={{
+                opacity: 1,
+                scale: 1,
+              }}
+              transition={{
+                type: "spring",
+              }}
+            >
+
+              <span>
+                WAIT... 🎀
+              </span>
+
+              <p>
+                I almost forgot the most important part...
+                <br />
+                WHY I CAME HERE! 😂
+              </p>
+
+            </motion.div>
+
+            <motion.button
+              className="story-button cute-button"
+              onClick={revealBirthday}
+              whileHover={{
+                scale: 1.05,
+                y: -3,
+              }}
+              whileTap={{
+                scale: 0.95,
+              }}
+            >
+              Click here to know..!
+              <span>→</span>
+            </motion.button>
+
+          </motion.div>
+        )}
+
+        {/* =================================================
+            PHASE 5 — FINAL BIRTHDAY REVEAL
+        ================================================= */}
+
+        {phase === 5 && (
+          <motion.div
+            key="birthday"
+            className="cute-birthday"
+            initial={{
+              opacity: 0,
+              scale: 0.7,
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+            }}
+            transition={{
+              duration: 1,
+              type: "spring",
+            }}
+          >
+
+            <CuteGirl happy />
+
+            <motion.span
+              className="birthday-small-message"
+              initial={{
+                opacity: 0,
+                y: 15,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                delay: 0.4,
+              }}
+            >
+              SURPRISE!!! 🎉
+            </motion.span>
+
+            <motion.h1
+              initial={{
+                opacity: 0,
+                scale: 0.5,
+              }}
+              animate={{
+                opacity: 1,
+                scale: 1,
+              }}
+              transition={{
+                delay: 0.7,
+                duration: 1,
+                type: "spring",
+              }}
+            >
+              HAPPY
+              <br />
+
+              <span>
+                BIRTHDAY
+              </span>
+
+              <br />
+
+              <strong>
+                AMMA! ❤️
+              </strong>
+            </motion.h1>
+
+            <motion.p
               initial={{
                 opacity: 0,
                 y: 20,
@@ -741,18 +844,104 @@ function Opening({ onComplete }) {
                 y: 0,
               }}
               transition={{
-                delay: 0.6,
+                delay: 1.4,
               }}
             >
-              ✨
-            </motion.div>
+              Your little surprise
+              <br />
+              has finally arrived. 🎀
+            </motion.p>
+
           </motion.div>
         )}
+
       </AnimatePresence>
+
     </motion.section>
   );
 }
 
+/* =====================================================
+   CUTE GIRL
+===================================================== */
+
+function CuteGirl({
+  carryingGift = false,
+  happy = false,
+}) {
+  return (
+    <motion.div
+      className="cute-girl-wrapper"
+      animate={{
+        y: [0, -8, 0],
+        rotate: [-1, 1, -1],
+      }}
+      transition={{
+        duration: 2.5,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}
+    >
+
+      {carryingGift && (
+        <motion.div
+          className="girl-gift"
+          animate={{
+            rotate: [-4, 4, -4],
+          }}
+          transition={{
+            duration: 1.2,
+            repeat: Infinity,
+          }}
+        >
+          🎁
+        </motion.div>
+      )}
+
+      <div className="girl-hair">
+        <div className="girl-hair-bun left" />
+        <div className="girl-hair-bun right" />
+      </div>
+
+      <div className="girl-head">
+
+        <div className="girl-face">
+
+          <span className="girl-eye left" />
+          <span className="girl-eye right" />
+
+          <span className="girl-cheek left" />
+          <span className="girl-cheek right" />
+
+          <span className="girl-mouth">
+            {happy ? "◡" : "◡"}
+          </span>
+
+        </div>
+
+        <div className="girl-bow">
+          🎀
+        </div>
+
+      </div>
+
+      <div className="girl-body">
+
+        <div className="girl-arm left" />
+        <div className="girl-arm right" />
+
+        <div className="girl-dress" />
+
+      </div>
+
+      <div className="girl-feet">
+        <span />
+        <span />
+      </div>
+
+    </motion.div>
+  );
+}
 
 /* =====================================================
    BIRTHDAY REVEAL
@@ -775,11 +964,9 @@ function BirthdayReveal({ openMemories }) {
         scale: 0.96,
       }}
       transition={{
-        duration: 1.4,
-        ease: "easeOut",
+        duration: 1.2,
       }}
     >
-      {/* Warm reveal glow */}
 
       <motion.div
         className="birthday-glow"
@@ -803,10 +990,7 @@ function BirthdayReveal({ openMemories }) {
         <span>✦</span>
         <span>·</span>
         <span>✧</span>
-        <span>✦</span>
       </div>
-
-      {/* Balloons */}
 
       <motion.div
         className="reveal-balloon balloon-one"
@@ -866,7 +1050,6 @@ function BirthdayReveal({ openMemories }) {
         🎈
       </motion.div>
 
-
       <div className="birthday-content">
 
         <motion.span
@@ -884,25 +1067,8 @@ function BirthdayReveal({ openMemories }) {
             duration: 1.5,
           }}
         >
-          THE SECRET IS OUT
+          THE SURPRISE IS JUST BEGINNING
         </motion.span>
-
-        <motion.p
-          className="birthday-intro-new"
-          initial={{
-            opacity: 0,
-            y: 20,
-          }}
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            delay: 1.2,
-          }}
-        >
-          The darkness was only hiding one thing...
-        </motion.p>
 
         <motion.h1
           initial={{
@@ -916,17 +1082,23 @@ function BirthdayReveal({ openMemories }) {
             y: 0,
           }}
           transition={{
-            delay: 1.7,
+            delay: 1,
             duration: 1.3,
             type: "spring",
-            stiffness: 100,
           }}
         >
           HAPPY
           <br />
-          <span>BIRTHDAY</span>
+
+          <span>
+            BIRTHDAY
+          </span>
+
           <br />
-          <strong>MOMMY! ❤️</strong>
+
+          <strong>
+            AMMA! ❤️
+          </strong>
         </motion.h1>
 
         <motion.div
@@ -940,7 +1112,7 @@ function BirthdayReveal({ openMemories }) {
             opacity: 1,
           }}
           transition={{
-            delay: 2.5,
+            delay: 1.8,
             duration: 1,
           }}
         />
@@ -956,12 +1128,12 @@ function BirthdayReveal({ openMemories }) {
             y: 0,
           }}
           transition={{
-            delay: 2.8,
+            delay: 2,
           }}
         >
-          For the woman who made my world
+          But before we talk about being my Amma...
           <br />
-          feel like home. ❤️
+          let's go back to the beginning. ❤️
         </motion.p>
 
         <motion.button
@@ -975,7 +1147,7 @@ function BirthdayReveal({ openMemories }) {
             y: 0,
           }}
           transition={{
-            delay: 3.5,
+            delay: 2.7,
           }}
           whileHover={{
             y: -4,
@@ -990,58 +1162,19 @@ function BirthdayReveal({ openMemories }) {
         </motion.button>
 
       </div>
+
     </motion.section>
   );
 }
 
-
 /* =====================================================
-   MEMORIES
+   AMMA'S LIFE STORY
 ===================================================== */
 
 function Memories({ onNext }) {
-  const memories = [
-    {
-      image: memory1,
-      year: "CHAPTER 01",
-      title: "Where it all began",
-      text: "Before I knew what memories were, there was you.",
-    },
-    {
-      image: memory2,
-      year: "CHAPTER 02",
-      title: "My little world",
-      text: "So many of my happiest childhood moments had you somewhere in them.",
-    },
-    {
-      image: memory3,
-      year: "CHAPTER 03",
-      title: "Growing up",
-      text: "Some things changed as I grew older. But you were always there.",
-    },
-    {
-      image: memory4,
-      year: "CHAPTER 04",
-      title: "Little moments",
-      text: "The ordinary days somehow became some of my favourite memories.",
-    },
-    {
-      image: memory5,
-      year: "CHAPTER 05",
-      title: "Us",
-      text: "Different days, different places, same bond.",
-    },
-    {
-      image: memory6,
-      year: "CHAPTER 06",
-      title: "And today...",
-      text: "I look back at all these moments and realise how lucky I am.",
-    },
-  ];
-
   return (
     <motion.section
-      className="memories-screen"
+      className="life-story-screen"
       initial={{
         opacity: 0,
       }}
@@ -1056,8 +1189,9 @@ function Memories({ onNext }) {
         duration: 1,
       }}
     >
+
       <motion.div
-        className="memories-header"
+        className="life-story-header"
         initial={{
           opacity: 0,
           y: 50,
@@ -1070,28 +1204,32 @@ function Memories({ onNext }) {
           duration: 1,
         }}
       >
-        <span>OUR STORY</span>
+
+        <span>
+          A LITTLE JOURNEY THROUGH HER LIFE
+        </span>
 
         <h2>
-          A little journey
+          Before she was
           <br />
-          through our memories
-          <br />
-          <em>❤️</em>
+          <em>my Amma...</em>
         </h2>
 
         <p>
-          Scroll slowly...
+          There was a whole beautiful story
           <br />
-          there's a lot of love hidden here.
+          waiting to be discovered. ❤️
         </p>
+
       </motion.div>
 
-      <div className="memory-list">
-        {memories.map((memory, index) => (
+      <div className="life-chapter-list">
+
+        {lifeChapters.map((chapter, index) => (
+
           <motion.article
-            className="memory-card"
-            key={memory.image}
+            className="life-chapter"
+            key={chapter.id}
             initial={{
               opacity: 0,
               y: 100,
@@ -1104,45 +1242,128 @@ function Memories({ onNext }) {
             }}
             viewport={{
               once: true,
-              amount: 0.25,
+              amount: 0.15,
             }}
             transition={{
               duration: 1,
-              delay: index % 2 === 0 ? 0 : 0.15,
             }}
           >
-            <div className="memory-image-wrapper">
-              <motion.img
-                src={memory.image}
-                alt={memory.title}
-                whileHover={{
-                  scale: 1.05,
-                }}
-                transition={{
-                  duration: 0.8,
-                }}
-              />
 
-              <div className="memory-image-overlay" />
+            <div className="life-chapter-number">
+              {chapter.chapter}
+            </div>
 
-              <span className="memory-chapter">
-                {memory.year}
+            <div className="life-chapter-heading">
+
+              <span>
+                {chapter.era}
               </span>
+
+              <h3>
+                {chapter.title}
+              </h3>
+
             </div>
 
-            <div className="memory-text">
-              <h3>{memory.title}</h3>
-              <p>{memory.text}</p>
-            </div>
+            {chapter.photos.length > 0 ? (
+
+              <div className="life-photo-grid">
+
+                {chapter.photos.map(
+                  (photo, photoIndex) => (
+
+                    <motion.div
+                      className="life-photo"
+                      key={`${chapter.id}-${photoIndex}`}
+                      initial={{
+                        opacity: 0,
+                        scale: 0.9,
+                        rotate:
+                          photoIndex % 2 === 0
+                            ? -2
+                            : 2,
+                      }}
+                      whileInView={{
+                        opacity: 1,
+                        scale: 1,
+                        rotate:
+                          photoIndex % 2 === 0
+                            ? -1
+                            : 1,
+                      }}
+                      viewport={{
+                        once: true,
+                      }}
+                      transition={{
+                        duration: 0.8,
+                      }}
+                      whileHover={{
+                        scale: 1.03,
+                        rotate: 0,
+                      }}
+                    >
+
+                      <img
+                        src={photo}
+                        alt={chapter.title}
+                      />
+
+                    </motion.div>
+
+                  )
+                )}
+
+              </div>
+
+            ) : (
+
+              <div className="future-photo-placeholder">
+                <span>📸</span>
+                <p>
+                  More memories from this chapter
+                  <br />
+                  will be added here ❤️
+                </p>
+              </div>
+
+            )}
+
+            <motion.div
+              className="life-chapter-text"
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+              }}
+              transition={{
+                delay: 0.2,
+                duration: 0.8,
+              }}
+            >
+
+              <p>
+                {chapter.description}
+              </p>
+
+            </motion.div>
+
           </motion.article>
+
         ))}
+
       </div>
 
       <motion.div
-        className="memories-ending"
+        className="life-story-transition"
         initial={{
           opacity: 0,
-          y: 40,
+          y: 50,
         }}
         whileInView={{
           opacity: 1,
@@ -1150,71 +1371,52 @@ function Memories({ onNext }) {
         }}
         viewport={{
           once: true,
+          amount: 0.4,
+        }}
+        transition={{
+          duration: 1,
         }}
       >
-        <span>AND THROUGH IT ALL...</span>
+
+        <span>
+          AND AFTER ALL THOSE YEARS...
+        </span>
 
         <h2>
-          One thing
-          <br />
-          never changed.
+          She became my Amma. ❤️
         </h2>
 
         <p>
-          You were always there.
+          But that's not the end of her story.
           <br />
-          And you always will be. ❤️
+          That's where my favourite chapter begins.
         </p>
 
         <motion.button
-          className="story-button memories-next"
+          className="story-button"
           onClick={onNext}
+          whileHover={{
+            y: -4,
+          }}
           whileTap={{
             scale: 0.95,
           }}
         >
-          There's more I want to say
+          There are things I want to tell you
           <span>→</span>
         </motion.button>
+
       </motion.div>
+
     </motion.section>
   );
 }
-
 
 /* =====================================================
    THINGS I NEVER SAY ENOUGH
 ===================================================== */
 
 function ThingsISay({ onNext }) {
-  const messages = [
-    {
-      number: "01",
-      title: "Thank you",
-      text: "For all the little things you do that I sometimes forget to notice.",
-    },
-    {
-      number: "02",
-      title: "You are my safe place",
-      text: "No matter how old I grow, a part of me will always feel at home with you.",
-    },
-    {
-      number: "03",
-      title: "I am proud of you",
-      text: "Not just because you are my mother, but because of the person you are.",
-    },
-    {
-      number: "04",
-      title: "You mean more than I say",
-      text: "I may not always say it, but I carry your love with me every single day.",
-    },
-    {
-      number: "05",
-      title: "And finally...",
-      text: "I love you, Mummy. More than these little words could ever explain. ❤️",
-    },
-  ];
-
   return (
     <motion.section
       className="things-screen"
@@ -1232,6 +1434,7 @@ function ThingsISay({ onNext }) {
         duration: 1,
       }}
     >
+
       <motion.div
         className="things-header"
         initial={{
@@ -1246,23 +1449,28 @@ function ThingsISay({ onNext }) {
           duration: 1,
         }}
       >
-        <span>A LITTLE CONFESSION</span>
+
+        <span>
+          A LITTLE CONFESSION
+        </span>
 
         <h2>
           Things I Never
           <br />
           Say Enough
           <br />
-          <em>💌</em>
         </h2>
 
         <p>
           Some things are easier to write than to say.
         </p>
+
       </motion.div>
 
       <div className="things-list">
+
         {messages.map((message, index) => (
+
           <motion.div
             className="message-card"
             key={message.number}
@@ -1285,16 +1493,27 @@ function ThingsISay({ onNext }) {
               delay: index * 0.1,
             }}
           >
+
             <span className="message-number">
               {message.number}
             </span>
 
             <div>
-              <h3>{message.title}</h3>
-              <p>{message.text}</p>
+
+              <h3>
+                {message.title}
+              </h3>
+
+              <p>
+                {message.text}
+              </p>
+
             </div>
+
           </motion.div>
+
         ))}
+
       </div>
 
       <motion.div
@@ -1312,7 +1531,10 @@ function ThingsISay({ onNext }) {
           duration: 1,
         }}
       >
-        <span>JUST BETWEEN US...</span>
+
+        <span>
+          JUST BETWEEN US...
+        </span>
 
         <p>
           I don't always say these things.
@@ -1332,11 +1554,12 @@ function ThingsISay({ onNext }) {
         >
           I have something for you 🎁
         </motion.button>
+
       </motion.div>
+
     </motion.section>
   );
 }
-
 
 /* =====================================================
    GIFT
@@ -1377,9 +1600,11 @@ function Gift({ onNext }) {
         duration: 1,
       }}
     >
+
       <AnimatePresence mode="wait">
 
         {!opened ? (
+
           <motion.div
             className="gift-content"
             key="closed"
@@ -1396,31 +1621,12 @@ function Gift({ onNext }) {
               scale: 0.9,
             }}
           >
-            <motion.span
-              className="gift-label"
-              initial={{
-                opacity: 0,
-              }}
-              animate={{
-                opacity: 1,
-              }}
-            >
+
+            <motion.span className="gift-label">
               ONE LITTLE SURPRISE
             </motion.span>
 
-            <motion.h2
-              initial={{
-                opacity: 0,
-                y: 25,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                delay: 0.2,
-              }}
-            >
+            <motion.h2>
               I got something
               <br />
               for you...
@@ -1444,25 +1650,25 @@ function Gift({ onNext }) {
                 ease: "easeInOut",
               }}
             >
-              <span className="gift-lid">🎀</span>
-              <span className="gift-body">🎁</span>
+
+              <span className="gift-lid">
+                🎀
+              </span>
+
+              <span className="gift-body">
+                🎁
+              </span>
+
             </motion.button>
 
-            <motion.p
-              initial={{
-                opacity: 0,
-              }}
-              animate={{
-                opacity: 0.65,
-              }}
-              transition={{
-                delay: 0.6,
-              }}
-            >
+            <motion.p>
               Tap the gift ❤️
             </motion.p>
+
           </motion.div>
+
         ) : (
+
           <motion.div
             className="gift-reveal"
             key="opened"
@@ -1479,6 +1685,7 @@ function Gift({ onNext }) {
               type: "spring",
             }}
           >
+
             <span className="gift-label">
               FOR MY MUMMY ❤️
             </span>
@@ -1527,14 +1734,16 @@ function Gift({ onNext }) {
               Read my letter 💌
               <span>→</span>
             </motion.button>
+
           </motion.div>
+
         )}
 
       </AnimatePresence>
+
     </motion.section>
   );
 }
-
 
 /* =====================================================
    FINAL LETTER
@@ -1558,6 +1767,7 @@ function FinalLetter({ onNext }) {
         duration: 1,
       }}
     >
+
       <motion.div
         className="letter-container"
         initial={{
@@ -1572,6 +1782,7 @@ function FinalLetter({ onNext }) {
           duration: 1.2,
         }}
       >
+
         <motion.span
           className="letter-label"
           initial={{
@@ -1606,50 +1817,31 @@ function FinalLetter({ onNext }) {
             duration: 1.2,
           }}
         >
+
           <p className="letter-dear">
-            Dear Mummy,
-          </p>
+  Dear Amma,
+</p>
 
-          <p>
-            I don't think I say this enough, but thank you for
-            being there through every little moment of my life.
-          </p>
+<p>
+  Enilla... yellarigu care madu, but nang jasti maadu. Bare bare sinchu sinchu ant heli hotti urasbyada. 
+</p>
 
-          <p>
-            From the days when I needed you for everything,
-            to the days when I'm slowly finding my own way,
-            your love has always been my biggest comfort.
-          </p>
+<p>
+  Laguna party kodu! 😌😂
+</p>
 
-          <p>
-            You have given me so much more than I could ever
-            put into words — your time, your patience, your
-            strength, your care and most importantly, your love.
-          </p>
+<p className="letter-love">
+  I love you more than words can say. ❤️
+</p>
 
-          <p>
-            If I could wish one thing for you today, it would be
-            that life gives you back all the happiness you have
-            given to everyone around you.
-          </p>
+<p className="letter-sign">
+  Happy Birthday Amma ❤️
+  <br />
+  With all my love,
+  <br />
+  Your Son ❤️
+</p>
 
-          <p>
-            I may grow older, but I'll always be your little girl.
-            And no matter where life takes me, a part of my heart
-            will always belong to you.
-          </p>
-
-          <p className="letter-love">
-            I love you more than words can say. ❤️
-          </p>
-
-          <p className="letter-sign">
-            Happy Birthday, Mummy.
-            <br />
-            With all my love,
-            <br />
-            Your Akshara ❤️
-          </p>
         </motion.div>
 
         <motion.div
@@ -1664,6 +1856,7 @@ function FinalLetter({ onNext }) {
             delay: 2,
           }}
         >
+
           <p>
             One last thing...
           </p>
@@ -1681,12 +1874,14 @@ function FinalLetter({ onNext }) {
             Take me to the end ✨
             <span>→</span>
           </motion.button>
+
         </motion.div>
+
       </motion.div>
+
     </motion.section>
   );
 }
-
 
 /* =====================================================
    FINALE
@@ -1706,6 +1901,7 @@ function Finale() {
         duration: 1.2,
       }}
     >
+
       <motion.div
         className="finale-glow"
         animate={{
@@ -1740,6 +1936,7 @@ function Finale() {
           duration: 1.5,
         }}
       >
+
         <motion.div
           className="finale-photo-wrapper"
           initial={{
@@ -1757,9 +1954,10 @@ function Finale() {
             duration: 1.2,
           }}
         >
+
           <motion.img
-            src={memory6}
-            alt="A beautiful memory with Mummy"
+            src={last}
+            alt="A beautiful memory with Amma"
             animate={{
               scale: [1, 1.035, 1],
             }}
@@ -1771,6 +1969,7 @@ function Finale() {
           />
 
           <div className="finale-photo-overlay" />
+
         </motion.div>
 
         <motion.span
@@ -1807,7 +2006,11 @@ function Finale() {
         >
           HAPPY BIRTHDAY,
           <br />
-          <span>MOMMY!</span> ❤️
+
+          <span>
+             AMMA
+          </span>{" "}
+          ❤️
         </motion.h1>
 
         <motion.div
@@ -1839,7 +2042,9 @@ function Finale() {
             duration: 1,
           }}
         >
-          No matter how old I grow,
+          No matter how many roles you have played,
+          <br />
+          no matter how many lives you have touched...
           <br />
           I'll always be your little girl.
         </motion.p>
@@ -1875,14 +2080,26 @@ function Finale() {
             delay: 3.8,
           }}
         >
-          — Akshara
         </motion.p>
+
       </motion.div>
 
-      <div className="finale-sparkle sparkle-one">✦</div>
-      <div className="finale-sparkle sparkle-two">✧</div>
-      <div className="finale-sparkle sparkle-three">✦</div>
-      <div className="finale-sparkle sparkle-four">✧</div>
+      <div className="finale-sparkle sparkle-one">
+        ✦
+      </div>
+
+      <div className="finale-sparkle sparkle-two">
+        ✧
+      </div>
+
+      <div className="finale-sparkle sparkle-three">
+        ✦
+      </div>
+
+      <div className="finale-sparkle sparkle-four">
+        ✧
+      </div>
+
     </motion.section>
   );
 }
